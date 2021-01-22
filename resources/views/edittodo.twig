@@ -1,0 +1,57 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <div class="container jumbotron bg-info text-center ">   
+        <h1>Todo App</h1>
+        <p>Slim 3 Todo by ensodev</p>
+        <p></p>
+        <h6 class='text-danger'>Add Todo</h6>
+        <br />
+        <a href='{{ path_for('mytodos') }}'class='btn btn-info'>My Todos</a>
+        {% if msg == false %}
+            <hr />
+            <div class='alert alert-info'>Todo not found</div>
+        {% endif %}
+    </div>
+
+    
+    
+    <div class='row'>
+        <div class='col-md-3'>
+        </div>
+        <div class='col-md-6'>
+        {% if msg == true %}
+            <form action='{{ path_for('edit') }}' method='post'>
+                        <div class='row'>
+                            <div class='text-left '>
+                                <div class='text-left'>
+                                    <label for="todo"></label>
+                                    <input type='text' id='todo' name='todo' placeholder='Todo Topic' value="{{ todos.topic }}" class='form-control'>
+                                </div>
+
+                                <div>
+                                    <label for="Date"></label>
+                                    <input type='date' id='date' name='date' placeholder='date' value="{{ todos.todo_date }}" class='form-control'>
+                                </div>
+
+                                <div>
+                                    <label for="message"></label>
+                                    <textarea name="message" id="message" cols="30" rows="10" placeholder='Description' class='form-control'>{{ todos.messagea }}</textarea>
+                                </div>
+                                <br />
+                                <input type='email' id='email' name='email' value="{{ todos.email }}"hidden >
+                                <input type='text' id='id' name='id'  value="{{ todos.id }}" hidden>
+                                <div>
+                                <button type='submit' id='submit' class='form-control btn btn-info'>Edit</button>
+                                </div>
+                            </div>
+                        </div>           
+                </form>
+            {% endif %}
+            </div>
+           
+            <div class='col-md-3'>
+            </div>
+        </div>
+        <p class='mb-4'></p>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+   
+    <div class="container jumbotron bg-info text-center ">   
+        <h1>Todo App</h1>
+        <p>Slim 3 Todo by ensodev</p>
+        <p></p>
+        <h6 class='text-danger'>Add Todo</h6>
+        <br />
+        <a href='{{ path_for('mytodos') }}'class='btn btn-info'>View Todos</a>
+    
+        {% if msg == 1 %}
+            <hr />
+            <div class='alert alert-info'>{{ username }} Your new todo has been added to your todo list</div>
+        {% endif %}
+        </div>
+
+    
+    <div class='row'>
+        <div class='col-md-3'>
+        </div>
+        <div class='col-md-6'>
+        <form action='{{ path_for('home') }}' method='post'>
+                    <div class='row'>
+                        <div class='text-left '>
+                            <div class='text-left'>
+                                <label for="todo"></label>
+                                <input type='text' id='todo' name='todo' placeholder='Todo Topic' class='form-control'>
+                            </div>
+                            <div>
+                                <label for="username"></label>
+                                <input type='text' id='username' name='username' placeholder='username'  class='form-control'>
+                            </div>
+                            
+                            <div>
+                                <label for="email"></label>
+                                <input type='email' id='email' name='email' placeholder='Email'  class='form-control'>
+                            </div>
+
+                             <div>
+                                <label for="Date"></label>
+                                <input type='date' id='date' name='date' placeholder='date'  class='form-control'>
+                            </div>
+
+                            <div>
+                                <label for="message"></label>
+                                <textarea name="messsage" id="message" cols="30" rows="10" placeholder='Description' class='form-control'></textarea>
+                            </div>
+                            <br />
+                            <div>
+                               <button type='submit' id='submit' class='form-control btn btn-info'>Submit</button>
+                            </div>
+                        </div>
+                    </div>  
+                     
+            </form>
+            </div>
+           
+            <div class='col-md-3'>
+            </div>
+        </div> 
+        <p class='mb-4'></p>       
+{% endblock %}

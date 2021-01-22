@@ -1,0 +1,27 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <div class="container jumbotron bg-info text-center ">   
+        <h1>Todo App</h1>
+        <p>Slim 3 Todo by ensodev</p>
+        <p></p>
+        <div class='text-danger'>
+            {% if msg == true %}
+                <h4>{{ msg_info }}</h4>   
+            {% else %}
+                 <h4>You are not suppose to be here</h4>   
+            {% endif %}
+        </div>
+        <br />
+        <div class='text-danger'>
+            {% if msg == true %}
+                <a href='{{ path_for('home') }}'class='btn btn-info'>Add Todo</a>
+                <a href='{{ path_for('mytodos') }}'class='btn btn-info'>View Todos</a>
+				<a href='{{ path_for('logout') }}'class='btn btn-info'>Logout</a>
+            {% endif %}
+        </div>
+    </div>
+    <p class='mb-4'></p>
+
+    
+{% endblock %}

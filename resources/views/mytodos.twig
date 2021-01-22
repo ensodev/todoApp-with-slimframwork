@@ -1,0 +1,48 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <div class="container jumbotron bg-info text-center ">   
+        <h1>Todo App</h1>
+        <p>Slim 3 Todo by ensodev</p>
+        <p></p>
+        <h6 class='text-danger'>Search My Todo List</h6>
+        <br />
+       
+         <a href='{{ path_for('home') }}'class='btn btn-info'>Add Todo</a>
+		  | 
+		 <a href='{{ path_for('logout') }}'class='btn btn-info'>Logout</a>
+    </div>
+
+    <div class='row'>
+        <div class='col-md-3'>
+        </div>
+        
+        <div class='col-md-6'>
+        <form  action='{{ path_for('mytodos') }}' method='post'>
+                    <div class='row'>
+                        <div class='text-left '>
+                           
+                            <div>
+                                <label for="username"></label>
+                                <input type='text' id='username' name='username' placeholder='username'  class='form-control'>
+                            </div>
+
+                             <div>
+                                <label for="email"></label>
+                                <input type='email' id='email' name='email' placeholder='email'  class='form-control'>
+                            </div>
+                           
+                            <br />
+                            <div>
+                               <button type='submit' id='submit' class='form-control btn btn-info'>Submit</button>
+                            </div>
+                        </div>
+                    </div>           
+            </form>
+            </div>
+           
+            <div class='col-md-3'>
+            </div>
+        </div>
+        <p class='mb-4'></p>
+{% endblock %}
